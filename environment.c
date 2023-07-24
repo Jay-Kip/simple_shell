@@ -10,5 +10,17 @@
  */
 void _myEnviron(char **envp)
 {
+	int i = 0;
 
+	while (envp[i])
+	{
+		int j = 0;
+
+		while (envp[i][j])
+			j++;
+
+		write(1, envp[i], j);
+		write(1, "\n", 1);
+		i++;
+	}
 }
