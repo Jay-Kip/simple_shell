@@ -59,7 +59,7 @@ int main(void)
 		}
 
 
-		executeCommand(command);
+		_executecmd(command);
 	}
 
 	return (0);

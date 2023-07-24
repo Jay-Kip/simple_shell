@@ -9,3 +9,6 @@
  * @envp: pointer to environment variable array
  */
 void _myEnviron(char **envp)
+{
+
+}
