@@ -50,11 +50,11 @@ int main(void)
 			_clear();
 			continue;
 		}
-		if (_strcmp(input, "env") == 0)
+		/*if (_strcmp(input, "env") == 0)
 		{
 			_myEnviron(environ);
 			continue;
-		}
+		}*/
 
 
 		_executecmd(input);

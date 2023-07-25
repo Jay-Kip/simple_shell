@@ -23,7 +23,7 @@ int _strcmp(const char *s1, const char *s2);
 int _strlen(char *str);
 void _clear(void);
 void _changeDir(char *path);
-extern char **environ;
+/*extern char **environ;*/
 void executeEnv(void);
 
 
