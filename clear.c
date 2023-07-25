@@ -9,5 +9,5 @@
 
 void _clear(void)
 {
-	system("clear");
+	/*system("clear");*/
 }
