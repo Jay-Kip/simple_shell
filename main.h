@@ -8,6 +8,9 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <fcntl.h>
+#include <errno.h>
+#include <time.h>
+
 #define BUFFER_SIZE 1024
 
 void handlePath(char *cmd);
@@ -19,11 +22,9 @@ void exitShell(void);
 int _strcmp(const char *s1, const char *s2);
 int _strlen(char *str);
 void _clear(void);
-/*<<<<<<< HEAD*/
 void _changeDir(char *path);
-/*=======*/
 extern char **environ;
 void executeEnv(void);
-/*>>>>>>> 3f71e445227d2c668ed8627c601a444c33d67c4b*/
 
-#endif /* MAIN_H */
+
+#endif

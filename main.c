@@ -16,12 +16,12 @@
  */
 ssize_t readCommand(char *buffer, size_t size)
 {
-	ssize_t bytesRead;
+	ssize_t inputSize;
 
-	bytesRead = read(STDIN_FILENO, buffer, size);
-	if (bytesRead > 0 && buffer[bytesRead - 1] == '\n')
-		buffer[bytesRead - 1] = '\0';
-	return (bytesRead);
+	inputSize = read(STDIN_FILENO, buffer, size);
+	if (inputSize > 0 && buffer[inputSize - 1] == '\n')
+		buffer[inputSize - 1] = '\0';
+	return (inputSize);
 }
 
 /**
