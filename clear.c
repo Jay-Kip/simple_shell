@@ -6,3 +6,8 @@
  * _clear - function to clear screen
  * Return: nothing
  */
+
+void _clear(void)
+{
+	system("clear");
+}

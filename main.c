@@ -40,7 +40,7 @@ int main(void)
 			write(STDOUT_FILENO, PROMPT, sizeof(PROMPT) - 1);
 
 		inputSize = readCommand(input, sizeof(input));
-		if (bytesRead <= 0)
+		if (inputSize <= 0)
 			break;
 
 		if (_strcmp(input, "exit") == 0 || _strcmp(input, "quit") == 0)
@@ -52,8 +52,6 @@ int main(void)
 		}
 		if (_strcmp(input, "env") == 0)
 		{
-			char **environ;
-
 			_myEnviron(environ);
 			continue;
 		}

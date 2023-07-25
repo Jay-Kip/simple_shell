@@ -18,7 +18,7 @@ void _myEnviron(char **envp);
 void exitShell(void);
 int _strcmp(const char *s1, const char *s2);
 int _strlen(char *str);
-void _clear();
+void _clear(void);
 /*<<<<<<< HEAD*/
 void _changeDir(char *path);
 /*=======*/
