@@ -7,7 +7,5 @@
  */
 void exitShell(void)
 {
-	const char msg[] = "Exiting the shell...\n";
-
-	write(STDOUT_FILENO, msg, sizeof(msg) - 1);
+	exit(0);
 }

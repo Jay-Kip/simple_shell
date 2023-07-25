@@ -11,6 +11,9 @@ void _executecmd(char *command)
 	char *envp[] = {NULL};
 	char *args[4];
 
+	if (_strcmp(command, "exit") == 0)
+		exitShell();
+
 	pid = fork();
 
 	if (pid == -1)
