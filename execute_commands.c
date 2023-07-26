@@ -1,33 +1,41 @@
 #include "main.h"
-
 /**
- * execute_builtin - execute a built-in command
- * @command: the command to execute
- *
- * this function executes a built-in command
+ * _stripSpace - function to strip space
+ * @str: string
+ * Return: Nothing
  */
-/*void execute_builtin(char *command)
-{
-	if (strcmp(command, "exit") == 0)
-	{
-		exit(0);
-	}
-	else if (strcmp(command, "cd") == 0)
-	{
-		if (chdir(args[1]!= 0)
-				{
-				write(STDERR_FILENO, "cd no file or directory\n", 30);
-				}
-			}
-			else
-			{
-			write(STDERR_FILENO, "unknown built i n command: ", 26);
-			write(STDERR_FILENO,command, strlen(command));
-			write(STDERR_FILENO, "\n", 1);
-			}
-			}*/
 
-/*	
+void _stripSpace(char *str)
+{
+	if (str == NULL)
+		return;
+
+	if (*str == '\0')
+		return;
+
+	char *start = str;
+	char *end = str + _strlen(str) - 1;
+
+	/*Remove leading white space*/
+	while (*start == ' ' || *start == '\t')
+		start++;
+
+	/*Remove trailing white space*/
+	while (end > start && (*end == ' ' || *end == '\t'))
+		end--;
+
+	/*Null terminate*/
+	*(end + 1) = '\0';
+
+	/*shift remaining to start*/
+	char *dest = str;
+
+
+	for (char *src = start; src <= end; src++, dest++)
+		*dest = *src;
+	*dest = '\0';
+}
+/**
  * _executecmd - executes a command passed to the function using /bin/sh
  * @command: command passes to this function
  */
@@ -37,22 +45,13 @@ void _executecmd(char *command)
 	int status;
 	char *envp[] = {NULL};
 	char *args[4];
-	char *builtins[] = {"exit", NULL}; /* list of bult in commands*/
 
-	/*if (_strcmp(command, "exit") == 0)
-		_quitShell();*/
+	_stripSpace(command);
 
-	/*chek if command is a built-in command*/
-	for (int i = 0; builtins[i] != NULL; i++)
-	{
-		if (_strcmp(command, builtins[i]) == 0)
-		{
-			execute_builtin(command);/*execute built-in command*/
-			return;
-		}
-	}
+	if (_strcmp(command, "exit") == 0)
+		_quitShell();
 
-	if (access(command, X_OK) !=0)
+	if (access(command, X_OK) != 0)
 	{
 		perror("command not found");
 		return;

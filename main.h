@@ -3,7 +3,10 @@
 
 #include <stdio.h> /* for perror*/
 #include <stdlib.h> /*for exit(), malloc()*/
-#include <unistd.h>/*for access(), chdir(), close(), dup2(), exit(), fork(), getcwd(), isatty(), kill(),*/
+#include <unistd.h>/**
+		     * for access(), chdir(), close(),
+		     * dup2(), exit(), fork(), getcwd(), isatty(), kill(),
+		     */
 #include <string.h>/*for strock()*/
 #include <sys/types.h>/*for pid_t*/
 #include <sys/wait.h>/*for waitpid()*/
@@ -14,7 +17,7 @@
 #define BUFFER_SIZE 1024
 
 void _exec(char *cmd);
-
+void _stripSpace(char *str);
 void handlePath(char *cmd);
 void print_error_message(const char *command);
 int execute_command(char **args);
