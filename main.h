@@ -1,14 +1,14 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/types.h>
-#include <sys/wait.h>
+#include <stdio.h> /* for perror*/
+#include <stdlib.h> /*for exit(), malloc()*/
+#include <unistd.h>/*for access(), chdir(), close(), dup2(), exit(), fork(), getcwd(), isatty(), kill(),*/
+#include <string.h>/*for strock()*/
+#include <sys/types.h>/*for pid_t*/
+#include <sys/wait.h>/*for waitpid()*/
 #include <fcntl.h>
-#include <errno.h>
+#include <errno.h>/*for errno*/
 #include <time.h>
 
 #define BUFFER_SIZE 1024
