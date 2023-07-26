@@ -12,7 +12,7 @@ void _executecmd(char *command)
 	char *args[4];
 
 	if (_strcmp(command, "exit") == 0)
-		exitShell();
+		_quitShell();
 
 	pid = fork();
 
