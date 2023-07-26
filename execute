@@ -24,9 +24,7 @@ void _exec(char *cmd)
 		args[2] = cmd;
 		args[3] = NULL;
 
-	
 
-	
 		execve(args[0], args, envp);
 		perror("execve");
 		exit(1);
