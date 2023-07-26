@@ -3,6 +3,7 @@
 
 void _exec(char *cmd)
 {
+	pid_t pid;
 	char *args[1024];
 	int i = 0;
 	char *token = strtok(cmd, " \t\n");
@@ -14,10 +15,19 @@ void _exec(char *cmd)
 		i++;
 		token = strtok(NULL, " \t\n");
 	}
-	args[i] = NULL;
+
+	pid = fork();
+	if (pid == 0)
+	{
+		args[0] = "/bin/sh";
+		args[1] = "-c";
+		args[2] = cmd;
 
 	
-	execve(args[0], args, envp);
 
-	perror(args[0]);
+	
+		execve(args[0], args, envp);
+		perror("execve");
+		exit(1);
+	}
 }
