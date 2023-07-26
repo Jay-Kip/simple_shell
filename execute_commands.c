@@ -14,6 +14,12 @@ void _executecmd(char *command)
 	if (_strcmp(command, "exit") == 0)
 		_quitShell();
 
+	if (access(command, X_OK) !=0)
+	{
+		perror("command not found");
+		return;
+	}
+
 	pid = fork();
 
 	if (pid == -1)
