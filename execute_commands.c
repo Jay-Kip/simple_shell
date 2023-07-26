@@ -7,14 +7,31 @@
 
 void _stripSpace(char *str)
 {
+
+	char *start, *end, *dest, *src;
+	int len;
+
 	if (str == NULL)
 		return;
 
-	if (*str == '\0')
+	len = _strlen(str);
+	if (len == 0)
 		return;
 
-	char *start = str;
+	start = str;
+	end = str + len - 1;
+	dest = str;
+	src = start;
+	/*if (str == NULL)
+		return;
+
+	if (*str == '\0')
+		return;*/
+
+	/*char *start = str;
 	char *end = str + _strlen(str) - 1;
+	char *dest = str;
+	char *src = start;*/
 
 	/*Remove leading white space*/
 	while (*start == ' ' || *start == '\t')
@@ -28,10 +45,11 @@ void _stripSpace(char *str)
 	*(end + 1) = '\0';
 
 	/*shift remaining to start*/
-	char *dest = str;
+	/*char *dest = str;*/
+	/*char *src;*/
 
 
-	for (char *src = start; src <= end; src++, dest++)
+	for (src = start; src <= end; src++, dest++)
 		*dest = *src;
 	*dest = '\0';
 }
@@ -51,6 +69,7 @@ void _executecmd(char *command)
 	if (_strcmp(command, "exit") == 0)
 		_quitShell();
 
+	
 	if (access(command, X_OK) != 0)
 	{
 		perror("command not found");
