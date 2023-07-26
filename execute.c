@@ -22,6 +22,7 @@ void _exec(char *cmd)
 		args[0] = "/bin/sh";
 		args[1] = "-c";
 		args[2] = cmd;
+		args[3] = NULL;
 
 	
 

@@ -57,7 +57,7 @@ int main(void)
 		}
 
 
-		_exec(input);
+		_executecmd(input);
 	}
 
 	return (0);
