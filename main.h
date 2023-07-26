@@ -13,6 +13,8 @@
 
 #define BUFFER_SIZE 1024
 
+void _exec(char *cmd);
+
 void handlePath(char *cmd);
 void print_error_message(const char *command);
 int execute_command(char **args);
