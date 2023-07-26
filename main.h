@@ -20,7 +20,7 @@ void print_error_message(const char *command);
 int execute_command(char **args);
 void _executecmd(char *command);
 void _myEnviron(char **envp);
-void exitShell(void);
+void _quitShell(void);
 int _strcmp(const char *s1, const char *s2);
 int _strlen(char *str);
 void _clear(void);

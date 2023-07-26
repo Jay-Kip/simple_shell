@@ -3,9 +3,9 @@
 #include <stdio.h>
 
 /**
- * exitShell - Exits the shell
+ * _quitShell - Exits the shell
  */
-void exitShell(void)
+void _quitShell(void)
 {
 	exit(0);
 }
